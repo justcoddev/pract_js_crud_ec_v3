@@ -11,6 +11,7 @@ let edit = false;
 
 // inicio para modal
 const btnLanzarModal = document.querySelector('#lanzar-modal');
+
 const btnOcultarModal = document.querySelector('#ocultar-modal');
 
 const contModal = document.querySelector('.container__div');
@@ -19,7 +20,6 @@ btnLanzarModal.addEventListener('click', (e) => {
   e.preventDefault();
   contModal.classList.add('mostrar');
 });
-
 
 btnOcultarModal.addEventListener('click', (e) => {
   e.preventDefault();
@@ -95,6 +95,7 @@ function mostrarProducto() {
 
     // button editar
     const edit_btn = document.createElement('button');
+    edit_btn.setAttribute("id", "lanzar-modal");
     edit_btn.onclick = () => cargarProductos(producto);
     edit_btn.textContent = 'Editar';
     edit_btn.classList.add('btn', 'container__btn_editar');
@@ -114,6 +115,7 @@ function mostrarProducto() {
 
 
   });
+
 }
 
 
