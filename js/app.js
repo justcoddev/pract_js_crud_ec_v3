@@ -9,6 +9,24 @@ const objProducto = {
 
 let edit = false;
 
+// inicio para modal
+const btnLanzarModal = document.querySelector('#lanzar-modal');
+const btnOcultarModal = document.querySelector('#btn_Add');
+
+const contModal = document.querySelector('.container__div');
+
+btnLanzarModal.addEventListener('click', (e) => {
+  e.preventDefault();
+  contModal.classList.add('mostrar');
+});
+
+
+// btnOcultarModal.addEventListener('click', () => {
+
+//   contModal.classList.remove('mostrar');
+// });
+// fin para modal
+
 const formulario = document.querySelector('#formulario');
 const id_ = document.querySelector('#id');
 const nombre_ = document.querySelector('#nombre');
@@ -22,6 +40,16 @@ formulario.addEventListener('submit', validarFormulario);
 
 // function para validad formulario
 function validarFormulario(e) {
+  // btnOcultarModal.addEventListener('click',()=> {
+   
+  //   contModal.classList.remove('mostrar');
+
+
+
+  // });
+
+
+
   e.preventDefault();
 
   if (id_.value === '', nombre_.value === '' || cantidad_.value === '' || precio_.value === '') {
@@ -32,6 +60,7 @@ function validarFormulario(e) {
     editarProducto();
     edit = false;
 
+
   } else {
     // objProducto.idProducto = Date.now();
     objProducto.idProducto = id_.value;
@@ -39,6 +68,7 @@ function validarFormulario(e) {
     objProducto.cantidad = cantidad_.value;
     objProducto.precio = precio_.value;
     addProducto();
+
   }
 }
 
@@ -50,6 +80,8 @@ function addProducto() {
   cleanObjeto();
 
 }
+
+
 function cleanObjeto() {
   objProducto.idProducto = '';
   objProducto.nombre = '';
