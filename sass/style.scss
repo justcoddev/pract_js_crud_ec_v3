@@ -1,0 +1,23 @@
+@use 'form';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aqua;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & h1 {
+    font-weight: 300;
+  }
+}

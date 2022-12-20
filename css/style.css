@@ -1,0 +1,113 @@
+.container {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  background: burlywood;
+}
+.container__div {
+  width: 30%;
+  height: 250px;
+  margin: 15px 15px;
+  background-color: darkgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+}
+.container__div h2 {
+  margin-top: 10px;
+  font-weight: 300;
+  font-size: 2em;
+  color: black;
+}
+.container__form {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  background: rgb(34, 135, 175);
+  display: grid;
+  grid-template-columns: 100px 230px;
+}
+.container__form label {
+  padding: 4px 10px;
+  margin: 0 auto;
+}
+.container__form input {
+  padding: 4px 10px;
+  margin: 0 auto;
+}
+.container__form button {
+  padding: 4px 10px;
+  margin: 0 auto;
+}
+.container__listado {
+  width: 55%;
+  height: calc(100% - 50px);
+  margin: 15px 15px;
+  background-color: rgb(135, 132, 132);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px 10px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+}
+.container__listado h2 {
+  margin-top: 10px;
+  font-weight: 300;
+  font-size: 2em;
+  color: black;
+}
+.container__listado__productos {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px;
+  padding: 0 30px;
+}
+.container__listado p {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #ddd;
+}
+.container__listado hr {
+  width: 100%;
+  height: 1px;
+}
+.container__btn_editar {
+  background-color: green;
+}
+.container__btn_delete {
+  background-color: red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aqua;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header h1 {
+  font-weight: 300;
+}
+
+/*# sourceMappingURL=style.css.map */
