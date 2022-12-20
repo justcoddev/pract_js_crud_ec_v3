@@ -11,7 +11,7 @@ let edit = false;
 
 // inicio para modal
 const btnLanzarModal = document.querySelector('#lanzar-modal');
-const btnOcultarModal = document.querySelector('#btn_Add');
+const btnOcultarModal = document.querySelector('#ocultar-modal');
 
 const contModal = document.querySelector('.container__div');
 
@@ -21,10 +21,10 @@ btnLanzarModal.addEventListener('click', (e) => {
 });
 
 
-// btnOcultarModal.addEventListener('click', () => {
-
-//   contModal.classList.remove('mostrar');
-// });
+btnOcultarModal.addEventListener('click', (e) => {
+  e.preventDefault();
+  contModal.classList.remove('mostrar');
+});
 // fin para modal
 
 const formulario = document.querySelector('#formulario');
@@ -40,15 +40,6 @@ formulario.addEventListener('submit', validarFormulario);
 
 // function para validad formulario
 function validarFormulario(e) {
-  // btnOcultarModal.addEventListener('click',()=> {
-   
-  //   contModal.classList.remove('mostrar');
-
-
-
-  // });
-
-
 
   e.preventDefault();
 
