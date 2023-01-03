@@ -3,8 +3,10 @@ let listaProductos = [];
 const objProducto = {
   idProducto: '',
   nombre: '',
-  cantidad: '',
-  precio: ''
+  precioBase: '',
+  consumoE: '',
+  peso: '',
+  color: ''
 }
 
 let edit = false;
@@ -30,8 +32,10 @@ btnOcultarModal.addEventListener('click', (e) => {
 const formulario = document.querySelector('#formulario');
 const id_ = document.querySelector('#id');
 const nombre_ = document.querySelector('#nombre');
-const cantidad_ = document.querySelector('#cantidad');
-const precio_ = document.querySelector('#precio');
+const precioBase_ = document.querySelector('#precioBase');
+const consumoE_ = document.querySelector('#consumoE');
+const peso_ = document.querySelector('#peso');
+const color_ = document.querySelector('#color');
 const btn_add = document.querySelector('#btn_Add');
 
 // cuando el form detecte el submit va a 
@@ -43,7 +47,7 @@ function validarFormulario(e) {
 
   e.preventDefault();
 
-  if (id_.value === '', nombre_.value === '' || cantidad_.value === '' || precio_.value === '') {
+  if (id_.value === '', nombre_.value === '' || precioBase_.value === '' || consumoE_.value === '' || peso_.value === '' || color_.value === '') {
     alert('Los campos están vacios.');
     return;
   }
@@ -56,8 +60,10 @@ function validarFormulario(e) {
     // objProducto.idProducto = Date.now();
     objProducto.idProducto = id_.value;
     objProducto.nombre = nombre_.value;
-    objProducto.cantidad = cantidad_.value;
-    objProducto.precio = precio_.value;
+    objProducto.precioBase = precioBase_.value;
+    objProducto.consumoE = consumoE_.value;
+    objProducto.peso = peso_.value;
+    objProducto.color = color_.value;
     addProducto();
 
   }
@@ -76,8 +82,10 @@ function addProducto() {
 function cleanObjeto() {
   objProducto.idProducto = '';
   objProducto.nombre = '';
-  objProducto.cantidad = '';
-  objProducto.precio = '';
+  objProducto.precioBase = '';
+  objProducto.consumoE = '';
+  objProducto.peso = '';
+  objProducto.color = '';
 }
 
 function mostrarProducto() {
@@ -85,11 +93,14 @@ function mostrarProducto() {
 
   const containerProductos = document.querySelector('.container__productos');
 
+  const titulos = document.createElement("p");
+  titulos.innerText = "id || Electrodomestico || PrecioBase || consumo E || Peso || Color";
+
   listaProductos.forEach(producto => {
-    const { idProducto, nombre, cantidad, precio } = producto;
+    const { idProducto, nombre, precioBase, consumoE, peso, color } = producto;
 
     const parrafo = document.createElement('p');
-    parrafo.textContent = `${idProducto} - ${nombre} - ${cantidad} - ${precio} - `;
+    parrafo.textContent = `${idProducto + "\t"} | ${nombre + "\t"} | ${"$ " + precioBase + "\t"} | ${consumoE + "\t"} | ${peso + " kg" + "\t"} | ${color + "\t"} `;
     // estaba id aqui debajo
     parrafo.dataset.id = id;
 
@@ -110,6 +121,7 @@ function mostrarProducto() {
 
     const hr = document.createElement('hr');
 
+    containerProductos.appendChild(titulos);
     containerProductos.appendChild(parrafo);
     containerProductos.appendChild(hr);
 
@@ -127,11 +139,13 @@ function cleanHTML() {
 }
 
 function cargarProductos(producto) {
-  const { idProducto, nombre, cantidad, precio } = producto;
+  const { idProducto, nombre, precioBase, consumoE, peso, color } = producto;
   id_.value = idProducto;
   nombre_.value = nombre;
-  cantidad_.value = cantidad;
-  precio_.value = precio;
+  precioBase_.value = precioBase;
+  consumoE_.value = consumoE;
+  peso_.value = peso;
+  color_.value = color;
 
   objProducto.idProducto = idProducto;
 
@@ -142,16 +156,20 @@ function cargarProductos(producto) {
 function editarProducto() {
   // objProducto.idProducto = id_.value;
   objProducto.nombre = nombre_.value;
-  objProducto.cantidad = cantidad_.value;
-  objProducto.precio = precio_.value;
+  objProducto.precioBase = precioBase_.value;
+  objProducto.consumoE = consumoE_.value;
+  objProducto.peso = peso_.value;
+  objProducto.color = color_.value;
 
   listaProductos.map(producto => {
 
     if (producto.idProducto === objProducto.idProducto) {
       producto.idProducto = objProducto.idProducto;
       producto.nombre = objProducto.nombre;
-      producto.cantidad = objProducto.cantidad;
-      producto.precio = objProducto.precio;
+      producto.precioBase = objProducto.precioBase;
+      producto.consumoE = objProducto.consumoE;
+      producto.peso = objProducto.peso;
+      producto.color = objProducto.color;
     }
 
   });

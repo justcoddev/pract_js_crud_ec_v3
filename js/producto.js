@@ -1,9 +1,11 @@
 class Producto {
-  constructor(idProducto, nombre, cantidad, precio) {
+  constructor(idProducto, nombre, precioBase, consumoE, peso, color) {
     this.idproducto = idProducto;
     this.nombre = nombre;
-    this.cantidad = cantidad;
-    this.precio = precio;
+    this.precioBase = precioBase;
+    this.consumoE = consumoE;
+    this.peso = peso;
+    this.color = color;
   }
 
   get IdProducto() {
@@ -19,16 +21,31 @@ class Producto {
     this.nombre = nombre;
   }
 
-  get Cantidad() {
-    return this.cantidad;
+  get precioBase() {
+    return this.precioBase;
   }
-  set Cantidad(cantidad) {
-    this.cantidad = cantidad;
+  set precioBase(precioBase) {
+    this.precioBase = precioBase;
   }
-  get Precio() {
-    return this.precio;
+
+  get ConsumoE() {
+    return this.consumoE;
   }
-  set Precio(precio) {
-    this.precio = precio;
+  set ConsumoE(consumoE) {
+    this.consumoE = consumoE;
+  }
+
+  get Peso() {
+    return this.peso;
+  }
+  set Peso(peso) {
+    this.peso = peso;
+  }
+
+  get Color() {
+    return this.color;
+  }
+  set Color(color) {
+    this.color = color;
   }
 }

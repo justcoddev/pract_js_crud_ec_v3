@@ -11,23 +11,32 @@
 
 <body>
   <header class="header">
-    <h1>Lista Productos</h1>
+    <h1>Lista Electrodomesticos</h1>
   </header>
 
-  <!-- Crear productos -->
+  <!-- Crear electrodomestico -->
   <div class="container">
     <!-- <div class="contenedor-modal"></div> -->
     <div class="container__div">
-      <h2>Registro de productos</h2>
+      <h2>Registro de Electrodomestico</h2>
       <form action="#" class="container__form" id="formulario">
         <label>id producto</label>
         <input type="number" id="id" placeholder="Ingresar id">
+
         <label>Nombre:</label>
         <input type="text" id="nombre" placeholder="Ingresar nombre">
-        <label>Cantidad:</label>
-        <input type="number" id="cantidad" placeholder="Ingresar cantidad">
-        <label>Precio:</label>
-        <input type="text" id="precio" placeholder="Ingresar precio">
+
+        <label>PrecioBase:</label>
+        <input type="number" id="precioBase" placeholder="Ingresar precio base">
+
+        <label>Consumo Energetico(A-F):</label>
+        <input type="text" id="consumoE" placeholder="Ingresar Consumo(A-F)">
+
+        <label>Peso:</label>
+        <input type="number" id="peso" placeholder="Ingresar peso">
+
+        <label>Color:</label>
+        <input type="text" id="color" placeholder="Ingresar Color">
         <br>
         <button class="btn" type="submit" id="btn_Add">Añadir</button>
         <button class="btn" type="submit" id="ocultar-modal">Regresar</button>
@@ -40,11 +49,11 @@
     <!-- mostrar elementos -->
     <div class="container__listado">
 
-      <button class="container__listado__btn" type="submit" id="lanzar-modal">Agregar Producto</button>
+      <button class="container__listado__btn" type="submit" id="lanzar-modal">Agregar Electrodomestico</button>
 
-      <h2> Lista de Productos</h2>
+      <h2> Factura</h2>
       <div class="container__productos">
-
+        <p>id || Electrodomestico || PrecioBase || consumo E || Peso || Color</p>
       </div>
     </div>
   </div>
